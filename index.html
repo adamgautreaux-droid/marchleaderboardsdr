@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inconsolata:wght@400;500;600&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#f5f2eb;--border:#ddd9ce;--text:#1a1814;--muted:#9a9488;--faint:#e8e4db;--gold:#c8960a;--goldL:#f5c518;--red:#c0392b;--green:#1a7a4a;--blue:#2980b9;--r1:#c8960a;--r2:#7a7a7a;--r3:#9a6030;}
+:root{--bg:#f5f2eb;--border:#ddd9ce;--text:#1a1814;--muted:#9a9488;--faint:#e8e4db;--gold:#c8960a;--red:#c0392b;--green:#1a7a4a;--blue:#2980b9;--r1:#c8960a;--r2:#7a7a7a;--r3:#9a6030;}
 body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:20px 14px;}
 .wrap{max-width:900px;margin:0 auto;}
 .header{border-bottom:3px solid var(--text);padding-bottom:16px;margin-bottom:20px;}
@@ -32,10 +32,8 @@ h1 span{color:var(--gold);}
 .pbar-fg{height:100%;border-radius:2px;background:linear-gradient(90deg,#7a5808,var(--gold));}
 .tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:20px;flex-wrap:wrap;}
 .tab{cursor:pointer;background:transparent;border:none;border-bottom:3px solid transparent;font-family:'Inconsolata',monospace;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;color:var(--muted);transition:all .15s;margin-bottom:-1px;}
-.tab:hover,.tab.on{color:var(--text);}
-.tab.on{border-bottom-color:var(--gold);}
-.sec{display:none;}
-.sec.on{display:block;}
+.tab:hover,.tab.on{color:var(--text);}.tab.on{border-bottom-color:var(--gold);}
+.sec{display:none;}.sec.on{display:block;}
 @keyframes ri{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 @keyframes si{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
 .rr{border-bottom:1px solid var(--faint);padding:14px 0;display:grid;grid-template-columns:44px 1fr 60px;gap:0 12px;animation:ri .35s ease forwards;opacity:0;}
@@ -66,30 +64,6 @@ h1 span{color:var(--gold);}
 </head>
 <body>
 <div class="wrap">
-<script id="leaderboard-data">
-const DATA = {
-  month:"March 2026", workDay:2, workDaysTotal:20, goal:1000000,
-  updatedAt:"Tue Mar 3, 2026",
-  reps:[
-    {name:"Daniel Jordan",    rev:16666, cls:2, sets:5,  cc:16666},
-    {name:"Shivang Kapoor",   rev:16400, cls:2, sets:1,  cc:16400},
-    {name:"Suraj Bali",       rev:8000,  cls:3, sets:3,  cc:8000},
-    {name:"Gloria",           rev:12500, cls:1, sets:7,  cc:12500},
-    {name:"Harvey",           rev:6000,  cls:1, sets:6,  cc:1980},
-    {name:"Emery Sage",       rev:0,     cls:0, sets:8,  cc:0},
-    {name:"Kenny",            rev:0,     cls:0, sets:7,  cc:0},
-    {name:"TJ Miller",        rev:0,     cls:0, sets:6,  cc:0},
-    {name:"Ben",              rev:0,     cls:0, sets:4,  cc:0},
-    {name:"Saray Cortes",     rev:0,     cls:0, sets:5,  cc:0},
-    {name:"Andy Perez",       rev:0,     cls:0, sets:3,  cc:0},
-    {name:"Samuel Michalcin", rev:0,     cls:0, sets:3,  cc:0},
-    {name:"Jonathan Rolling", rev:0,     cls:0, sets:3,  cc:0},
-    {name:"Habib Fazli",      rev:0,     cls:0, sets:1,  cc:0},
-    {name:"Jose Bernal",      rev:0,     cls:0, sets:1,  cc:0},
-  ]
-};
-</script>
-
 <div class="header">
   <div class="eyebrow">SDR TEAM PERFORMANCE DASHBOARD</div>
   <div class="header-row"><h1 id="hMonth"></h1><div class="header-right" id="hMeta"></div></div>
@@ -112,53 +86,150 @@ const DATA = {
 <div id="sets" class="sec"></div>
 <div class="footer"><div class="fl" id="footerL"></div><div class="fr">WHO'S NEXT?</div></div>
 </div>
+<script type="text/javascript">
+var DATA = {
+  month:"March 2026", workDay:3, workDaysTotal:20, goal:1000000,
+  updatedAt:"Wed Mar 4, 2026",
+  reps:[
+    {name:"Gloria",           rev:40000, cls:3, sets:9,  cc:25000},
+    {name:"Daniel Jordan",    rev:16666, cls:2, sets:5,  cc:16666},
+    {name:"Shivang Kapoor",   rev:16400, cls:2, sets:1,  cc:16400},
+    {name:"Kenny",            rev:15000, cls:1, sets:13, cc:15000},
+    {name:"Suraj Bali",       rev:8000,  cls:3, sets:6,  cc:8000},
+    {name:"Harvey",           rev:6000,  cls:1, sets:6,  cc:1980},
+    {name:"Emery Sage",       rev:0,     cls:0, sets:12, cc:0},
+    {name:"TJ Miller",        rev:0,     cls:0, sets:7,  cc:0},
+    {name:"Caroline",         rev:0,     cls:0, sets:7,  cc:0},
+    {name:"Jonathan Rolling", rev:0,     cls:0, sets:7,  cc:0},
+    {name:"Andy Perez",       rev:0,     cls:0, sets:6,  cc:0},
+    {name:"Saray Cortes",     rev:0,     cls:0, sets:6,  cc:0},
+    {name:"Samuel Michalcin", rev:0,     cls:0, sets:6,  cc:0},
+    {name:"Ben",              rev:0,     cls:0, sets:5,  cc:0},
+    {name:"Jose Bernal",      rev:0,     cls:0, sets:1,  cc:0},
+    {name:"Habib Fazli",      rev:0,     cls:0, sets:1,  cc:0}
+  ]
+};
 
-<script>
-const $=id=>document.getElementById(id);
-const fmt$=n=>(n||n===0)?'$'+Math.round(n).toLocaleString():'—';
-const fmtP=n=>n!=null?n.toFixed(1)+'%':'—';
-const RC=['var(--r1)','var(--r2)','var(--r3)'];
-const rc=i=>RC[i]||'var(--muted)';
-const el=(tag,cls,html)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;};
-function show(id,btn){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));$(id).classList.add('on');btn.classList.add('on');}
-const active=DATA.reps.filter(r=>r.rev>0||r.cls>0||r.sets>0);
-const mR=Math.max(...active.map(r=>r.rev),1),mC=Math.max(...active.map(r=>r.cls),1),mS=Math.max(...active.map(r=>r.sets),1);
-const scored=active.map(r=>({...r,score:Math.round((r.rev/mR*100)*.5+(r.cls/mC*100)*.3+(r.sets/mS*100)*.2),rpc:r.cls>0?Math.round(r.rev/r.cls):null,cr:r.sets>0?r.cls/r.sets*100:null})).sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));
-const totRev=scored.reduce((s,r)=>s+r.rev,0),totCls=scored.reduce((s,r)=>s+r.cls,0),totSet=scored.reduce((s,r)=>s+r.sets,0),totCC=scored.reduce((s,r)=>s+(r.cc||0),0);
-const pct=totRev/DATA.goal*100,dLeft=DATA.workDaysTotal-DATA.workDay,needed=dLeft>0?Math.ceil((DATA.goal-totRev)/dLeft):0;
-const byRev=[...scored].sort((a,b)=>b.rev-a.rev||a.name.localeCompare(b.name));
-const byCls=[...scored].sort((a,b)=>b.cls-a.cls||a.name.localeCompare(b.name));
-const bySet=[...scored].filter(r=>r.sets>0).sort((a,b)=>b.sets-a.sets||a.name.localeCompare(b.name));
-const[mon,yr]=DATA.month.split(' ');
-$('hMonth').innerHTML=`${mon} <span>${yr}</span>`;
-$('hMeta').innerHTML=`${DATA.updatedAt?.toUpperCase()}<br>WORK DAY ${DATA.workDay} OF ${DATA.workDaysTotal}`;
-const mc=$('metricCards');
-[['💰','REVENUE MTD',fmt$(totRev),'linear-gradient(135deg,#7a5808,#c8960a)'],['🤝','CLOSES MTD',String(totCls),'linear-gradient(135deg,#8a2010,#c0392b)'],['📅','SETS MTD',String(totSet),'linear-gradient(135deg,#0a2a5a,#2980b9)'],['💵','CASH COLLECTED',fmt$(totCC),'linear-gradient(135deg,#0d4a2a,#1a7a4a)']].forEach(([icon,lbl,val,grad])=>{const c=el('div','mc');c.innerHTML=`<div class="mc-top" style="background:${grad}"></div><div class="mc-lbl">${icon} ${lbl}</div><div class="mc-val">${val}</div>`;mc.appendChild(c);});
-$('paceTitle').textContent=`${fmt$(totRev)} of ${fmt$(DATA.goal)}`;
-const ps=$('paceStats');
-[[pct.toFixed(1)+'%','ATTAINED'],[dLeft,'DAYS LEFT'],[fmt$(needed),'REV/DAY NEEDED']].forEach(([v,l])=>{ps.innerHTML+=`<div><span class="ps-val">${v}</span><span class="ps-lbl">${l}</span></div>`;});
-setTimeout(()=>$('paceFill').style.width=Math.min(pct,100)+'%',100);
-const board=$('board');
-scored.forEach((r,i)=>{
-  const pctS=scored[0].score>0?r.score/scored[0].score*100:0;
-  const barC=i===0?'var(--r1)':i===1?'var(--r2)':i===2?'var(--r3)':'var(--text)';
-  const gapTxt=i===0?`<span style="color:var(--green)">▲ LEADING THE BOARD</span>`:`<span style="color:var(--red)">▲ ${scored[i-1].score-r.score} pts · ${fmt$(scored[i-1].rev-r.rev)} revenue gap to #${i}</span>`;
-  const row=el('div','rr');
-  row.style.animationDelay=i*.04+'s';
-  row.innerHTML=`<div class="rrank" style="color:${rc(i)}">${i+1}</div><div><div class="rname" style="color:${rc(i)}">${r.name}</div><div class="pills">${[[fmt$(r.rev),'REV','var(--gold)'],[r.cls+' cls','CLOSES','var(--red)'],[(r.sets||'—')+' sets','SETS','var(--blue)'],[r.rpc?fmt$(r.rpc):'—','REV/CL','#555'],[fmtP(r.cr),'CR','var(--green)']].map(([v,l,c])=>`<div class="pill" style="border-left-color:${c}"><span class="pv">${v}</span><span class="pl">${l}</span></div>`).join('')}</div><div class="sbar-bg"><div class="sbar-fg" style="width:${pctS}%;background:${barC}"></div></div><div class="rgap">${gapTxt}</div></div><div><div class="rscore" style="color:${rc(i)}">${r.score}</div><div class="rslbl">SCORE</div></div>`;
+function $(id){return document.getElementById(id);}
+function fmt$(n){return (n||n===0)?'$'+Math.round(n).toLocaleString():'—';}
+function fmtP(n){return n!=null?n.toFixed(1)+'%':'—';}
+var RC=['var(--r1)','var(--r2)','var(--r3)'];
+function rc(i){return RC[i]||'var(--muted)';}
+function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
+function show(id,btn){
+  var secs=document.querySelectorAll('.sec');for(var i=0;i<secs.length;i++)secs[i].classList.remove('on');
+  var tabs=document.querySelectorAll('.tab');for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('on');
+  $(id).classList.add('on');btn.classList.add('on');
+}
+
+var active=DATA.reps.filter(function(r){return r.rev>0||r.cls>0||r.sets>0;});
+var mR=Math.max.apply(null,active.map(function(r){return r.rev;}).concat([1]));
+var mC=Math.max.apply(null,active.map(function(r){return r.cls;}).concat([1]));
+var mS=Math.max.apply(null,active.map(function(r){return r.sets;}).concat([1]));
+
+var scored=active.map(function(r){
+  return Object.assign({},r,{
+    score:Math.round((r.rev/mR*100)*.5+(r.cls/mC*100)*.3+(r.sets/mS*100)*.2),
+    rpc:r.cls>0?Math.round(r.rev/r.cls):null,
+    cr:r.sets>0?r.cls/r.sets*100:null
+  });
+}).sort(function(a,b){return b.score-a.score||a.name.localeCompare(b.name);});
+
+var totRev=scored.reduce(function(s,r){return s+r.rev;},0);
+var totCls=scored.reduce(function(s,r){return s+r.cls;},0);
+var totSet=scored.reduce(function(s,r){return s+r.sets;},0);
+var totCC=scored.reduce(function(s,r){return s+(r.cc||0);},0);
+var pct=totRev/DATA.goal*100;
+var dLeft=DATA.workDaysTotal-DATA.workDay;
+var needed=dLeft>0?Math.ceil((DATA.goal-totRev)/dLeft):0;
+var byRev=scored.slice().sort(function(a,b){return b.rev-a.rev||a.name.localeCompare(b.name);});
+var byCls=scored.slice().sort(function(a,b){return b.cls-a.cls||a.name.localeCompare(b.name);});
+var bySet=scored.filter(function(r){return r.sets>0;}).sort(function(a,b){return b.sets-a.sets||a.name.localeCompare(b.name);});
+
+var parts=DATA.month.split(' ');
+$('hMonth').innerHTML=parts[0]+' <span>'+parts[1]+'</span>';
+$('hMeta').innerHTML=DATA.updatedAt.toUpperCase()+'<br>WORK DAY '+DATA.workDay+' OF '+DATA.workDaysTotal;
+
+var mc=$('metricCards');
+var mDefs=[
+  ['💰','REVENUE MTD',fmt$(totRev),'linear-gradient(135deg,#7a5808,#c8960a)'],
+  ['🤝','CLOSES MTD',String(totCls),'linear-gradient(135deg,#8a2010,#c0392b)'],
+  ['📅','SETS MTD',String(totSet),'linear-gradient(135deg,#0a2a5a,#2980b9)'],
+  ['💵','CASH COLLECTED',fmt$(totCC),'linear-gradient(135deg,#0d4a2a,#1a7a4a)']
+];
+for(var i=0;i<mDefs.length;i++){
+  var c=el('div','mc');
+  c.innerHTML='<div class="mc-top" style="background:'+mDefs[i][3]+'"></div><div class="mc-lbl">'+mDefs[i][0]+' '+mDefs[i][1]+'</div><div class="mc-val">'+mDefs[i][2]+'</div>';
+  mc.appendChild(c);
+}
+
+$('paceTitle').textContent=fmt$(totRev)+' of '+fmt$(DATA.goal);
+var ps=$('paceStats');
+var pDefs=[[pct.toFixed(1)+'%','ATTAINED'],[dLeft,'DAYS LEFT'],[fmt$(needed),'REV/DAY NEEDED']];
+for(var i=0;i<pDefs.length;i++){
+  ps.innerHTML+='<div><span class="ps-val">'+pDefs[i][0]+'</span><span class="ps-lbl">'+pDefs[i][1]+'</span></div>';
+}
+setTimeout(function(){$('paceFill').style.width=Math.min(pct,100)+'%';},100);
+
+var board=$('board');
+for(var i=0;i<scored.length;i++){
+  var r=scored[i];
+  var pctS=scored[0].score>0?r.score/scored[0].score*100:0;
+  var barC=i===0?'var(--r1)':i===1?'var(--r2)':i===2?'var(--r3)':'var(--text)';
+  var gapTxt=i===0
+    ?'<span style="color:var(--green)">▲ LEADING THE BOARD</span>'
+    :'<span style="color:var(--red)">▲ '+(scored[i-1].score-r.score)+' pts · '+fmt$(scored[i-1].rev-r.rev)+' revenue gap to #'+i+'</span>';
+  var pills=[
+    [fmt$(r.rev),'REV','var(--gold)'],
+    [r.cls+' cls','CLOSES','var(--red)'],
+    [(r.sets||'—')+' sets','SETS','var(--blue)'],
+    [r.rpc?fmt$(r.rpc):'—','REV/CL','#555'],
+    [fmtP(r.cr),'CR','var(--green)']
+  ];
+  var pillHtml='';
+  for(var p=0;p<pills.length;p++){
+    pillHtml+='<div class="pill" style="border-left-color:'+pills[p][2]+'"><span class="pv">'+pills[p][0]+'</span><span class="pl">'+pills[p][1]+'</span></div>';
+  }
+  var row=el('div','rr');
+  row.style.animationDelay=(i*.04)+'s';
+  row.innerHTML='<div class="rrank" style="color:'+rc(i)+'">'+( i+1)+'</div>'
+    +'<div><div class="rname" style="color:'+rc(i)+'">'+r.name+'</div>'
+    +'<div class="pills">'+pillHtml+'</div>'
+    +'<div class="sbar-bg"><div class="sbar-fg" style="width:'+pctS+'%;background:'+barC+'"></div></div>'
+    +'<div class="rgap">'+gapTxt+'</div></div>'
+    +'<div><div class="rscore" style="color:'+rc(i)+'">'+r.score+'</div><div class="rslbl">SCORE</div></div>';
   board.appendChild(row);
-});
-function buildChart(cid,rows,fill,valFn,gapFn){const sec=$(cid);rows.forEach((r,i)=>{const w=rows[0]._max>0?r._val/rows[0]._max*100:0;const row=el('div','cr');row.style.animationDelay=i*.03+'s';row.innerHTML=`<div class="crank" style="color:${rc(i)}">${i+1}</div><div class="cname">${r.name}</div><div class="ctrack"><div class="cfill" style="width:${w}%;${fill}"></div></div><div><span class="cval" style="color:${rc(i)}">${valFn(r)}</span><span class="cgap" style="color:${i===0?'var(--green)':'var(--red)'}">${gapFn(r,i)}</span></div>`;sec.appendChild(row);});}
-const rR=byRev.map(r=>({...r,_val:r.rev,_max:byRev[0].rev}));
-const cR=byCls.map(r=>({...r,_val:r.cls,_max:byCls[0].cls}));
-const sR=bySet.map(r=>({...r,_val:r.sets,_max:bySet[0].sets}));
-$('revenue').innerHTML=`<div class="clbl">REVENUE MTD — ${fmt$(totRev)} TOTAL</div>`;
-$('closes').innerHTML=`<div class="clbl">CLOSES MTD — ${totCls} TOTAL</div>`;
-$('sets').innerHTML=`<div class="clbl">SETS MTD — ${totSet} TOTAL</div>`;
-buildChart('revenue',rR,'background:linear-gradient(90deg,#7a5808,#c8960a)',r=>fmt$(r.rev),(r,i)=>i===0?'▲ LEADER':`▲ ${fmt$(byRev[0].rev-r.rev)} to #1`);
-buildChart('closes',cR,'background:linear-gradient(90deg,#8a2010,#c0392b)',r=>r.cls+' closes',(r,i)=>i===0?'▲ LEADER':`▲ ${byCls[0].cls-r.cls} to #1`);
-buildChart('sets',sR,'background:linear-gradient(90deg,#0a2a5a,#2980b9)',r=>r.sets+' sets',(r,i)=>i===0?'▲ LEADER':`▲ ${bySet[0].sets-r.sets} to #1`);
-$('footerL').textContent=`UPDATED DAILY · SDR TEAM · ${DATA.month.toUpperCase()}`;
+}
+
+function buildChart(cid,rows,fill,valFn,gapFn){
+  var sec=$(cid);
+  for(var i=0;i<rows.length;i++){
+    var r=rows[i];
+    var w=rows[0]._max>0?r._val/rows[0]._max*100:0;
+    var row=el('div','cr');
+    row.style.animationDelay=(i*.03)+'s';
+    row.innerHTML='<div class="crank" style="color:'+rc(i)+'">'+(i+1)+'</div>'
+      +'<div class="cname">'+r.name+'</div>'
+      +'<div class="ctrack"><div class="cfill" style="width:'+w+'%;'+fill+'"></div></div>'
+      +'<div><span class="cval" style="color:'+rc(i)+'">'+valFn(r)+'</span>'
+      +'<span class="cgap" style="color:'+(i===0?'var(--green)':'var(--red)')+'">'+gapFn(r,i)+'</span></div>';
+    sec.appendChild(row);
+  }
+}
+
+var rR=byRev.map(function(r){return Object.assign({},r,{_val:r.rev,_max:byRev[0].rev});});
+var cR=byCls.map(function(r){return Object.assign({},r,{_val:r.cls,_max:byCls[0].cls});});
+var sR=bySet.map(function(r){return Object.assign({},r,{_val:r.sets,_max:bySet[0].sets});});
+
+$('revenue').innerHTML='<div class="clbl">REVENUE MTD — '+fmt$(totRev)+' TOTAL</div>';
+$('closes').innerHTML='<div class="clbl">CLOSES MTD — '+totCls+' TOTAL</div>';
+$('sets').innerHTML='<div class="clbl">SETS MTD — '+totSet+' TOTAL</div>';
+
+buildChart('revenue',rR,'background:linear-gradient(90deg,#7a5808,#c8960a)',function(r){return fmt$(r.rev);},function(r,i){return i===0?'▲ LEADER':'▲ '+fmt$(byRev[0].rev-r.rev)+' to #1';});
+buildChart('closes',cR,'background:linear-gradient(90deg,#8a2010,#c0392b)',function(r){return r.cls+' closes';},function(r,i){return i===0?'▲ LEADER':'▲ '+(byCls[0].cls-r.cls)+' to #1';});
+buildChart('sets',sR,'background:linear-gradient(90deg,#0a2a5a,#2980b9)',function(r){return r.sets+' sets';},function(r,i){return i===0?'▲ LEADER':'▲ '+(bySet[0].sets-r.sets)+' to #1';});
+
+$('footerL').textContent='UPDATED DAILY · SDR TEAM · '+DATA.month.toUpperCase();
 </script>
 </body>
 </html>
